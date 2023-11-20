@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const StyledSearchContainer = styled.form`
   display: flex;
   align-items: center;
-  background-color: #f5f5f5;
 
   border-radius: 10px;
 
@@ -15,7 +14,10 @@ export const StyledSearchInput = styled.input`
   outline: none;
   font-size: 16px;
   width: 100%;
-  height: 3rem;
+  height: 2.5rem;
+
+  background-color: ${(props) => props.theme.backgroundSecondary};
+  color: ${(props) => props.theme.text};
   border-radius: 5px;
   padding: 0.5rem;
 `;
