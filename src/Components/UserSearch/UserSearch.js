@@ -2,11 +2,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import SearchBar from '../Searchbar/Searchbar';
-import GithubApi from '../../GithubApi';
+import GithubApi from '../../githubapi/GithubApi';
+import { Header } from '../Header/Header';
 export const StyledContainer = styled.div`
   width: 55rem;
-  height: 32rem;
-  background-color: #f5f5f5;
+  height: 35rem;
+  background-color: blue;
 
   display: flex;
   flex-direction: column;
@@ -22,6 +23,8 @@ export const UserSearch = () => {
 
   return (
     <StyledContainer>
+      <Header />
+
       <SearchBar onSearch={handleSearch} />
       {username && <GithubApi username={username} />}
     </StyledContainer>
