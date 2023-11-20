@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import { FaSearch } from 'react-icons/fa';
-import { StyledSearchContainer, StyledSearchInput } from './searchbar.styled';
-import { SearchButton, SearchIcon } from './searchbar.styled';
+
+import { StyledSearchContainer, StyledSearchInput } from './Searchbar.styled';
 
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -18,16 +16,12 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <StyledSearchContainer onSubmit={handleSubmit}>
-      <SearchIcon>
-        <FaSearch />
-      </SearchIcon>
       <StyledSearchInput
         type="text"
         placeholder="Search..."
         value={searchTerm}
         onChange={handleChange}
       />
-      <SearchButton type="submit">Search</SearchButton>
     </StyledSearchContainer>
   );
 };
