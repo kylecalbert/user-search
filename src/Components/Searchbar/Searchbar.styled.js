@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledSearchContainer = styled.div`
+export const StyledSearchContainer = styled.form`
   display: flex;
   align-items: center;
   background-color: #f5f5f5;
