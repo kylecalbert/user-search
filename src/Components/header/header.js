@@ -7,6 +7,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 3rem;
 `;
 
 export const RightContainer = styled.div`

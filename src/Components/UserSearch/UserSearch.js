@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import SearchBar from '../Searchbar/Searchbar';
-import GithubApi from '../../githubapi/GithubApi';
+import GithubApi from '../../UserDetails/UserDetails';
 import { Header } from '../Header/Header';
 export const StyledContainer = styled.div`
-  width: 55rem;
+  width: 45rem;
   height: 35rem;
   background-color: blue;
 
@@ -17,15 +17,15 @@ export const StyledContainer = styled.div`
 export const UserSearch = () => {
   const [username, setUsername] = useState('');
 
-  const handleSearch = (searchTerm) => {
-    setUsername(searchTerm);
-  };
-
   return (
     <StyledContainer>
       <Header />
 
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar
+        onSearch={(searchTerm) => {
+          setUsername(searchTerm);
+        }}
+      />
       {username && <GithubApi username={username} />}
     </StyledContainer>
   );
