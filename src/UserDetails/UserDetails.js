@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import {
+  BioContainer,
   GridItems,
   MiddleContainer,
   UserDetailsContainer,
@@ -33,6 +34,13 @@ const UserDetails = ({ username }) => {
   return (
     <UserDetailsContainer>
       <UserDetailsContainer>
+        <BioContainer>
+          {data.bio ? (
+            <Text size={sizes.small}>{data.bio}</Text>
+          ) : (
+            <Text size={sizes.small}>No Bio Found</Text>
+          )}
+        </BioContainer>
         <MiddleContainer>
           <GridItems>
             <Text>Repos</Text>

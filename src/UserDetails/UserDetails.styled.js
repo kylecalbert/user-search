@@ -4,7 +4,6 @@ export const UserDetailsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: red;
   width: 100%;
   height: 70%;
   border-radius: 10px;
@@ -33,4 +32,11 @@ export const GridItems = styled.div`
   & > *:first-child {
     margin-bottom: 10px;
   }
+`;
+
+export const BioContainer = styled.div`
+  display: flex;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 2rem;
 `;
