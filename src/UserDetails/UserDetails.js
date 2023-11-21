@@ -11,6 +11,7 @@ import {
 import { Text } from '../Components/Text/Text';
 
 import { FaMapMarkerAlt, FaTwitter } from 'react-icons/fa';
+import SocialInfo from './SocialInfo';
 
 const fetchUserData = async (username) => {
   const response = await axios.get(`https://api.github.com/users/${username}`);
@@ -48,24 +49,12 @@ const UserDetails = ({ username }) => {
             <Text>{data.following}</Text>
           </GridItems>
         </MiddleContainer>
-        <BottomContainer>
-          <IconContainer>
-            <FaMapMarkerAlt />
-            <Text>{data.location}</Text>
-          </IconContainer>
-          <IconContainer>
-            <FaMapMarkerAlt />
-            <Text>{data.blog}</Text>
-          </IconContainer>
-          <IconContainer>
-            <FaMapMarkerAlt />
-            <Text>{data.location}</Text>
-          </IconContainer>
-          <IconContainer>
-            <FaMapMarkerAlt />
-            <Text>{data.blog}</Text>
-          </IconContainer>
-        </BottomContainer>
+        <SocialInfo
+          blog={data.blog}
+          location={data.location}
+          twitter={data.twitter_username}
+          email={data.email}
+        />
       </UserDetailsContainer>
     </UserDetailsContainer>
   );

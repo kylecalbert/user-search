@@ -1,15 +1,35 @@
+// UserDetailsBottom.js
 import React from 'react';
-import styled from 'styled-components';
+import { FaMapMarkerAlt, FaTwitter, FaLink } from 'react-icons/fa';
+
+import { SocialInfoContainer, IconContainer } from './SocialInfo.styled';
 import { Text } from '../Components/Text/Text';
 
-const StyledContainer = styled.div`
-  display: flex;
-`;
-export const SocialInfo = ({ icon, text }) => {
+const SocialInfo = ({ location, blog, twitter, email }) => {
   return (
-    <StyledContainer>
-      <Text>{text}</Text>
-      <Text>{icon}</Text>
-    </StyledContainer>
+    <SocialInfoContainer>
+      <IconContainer>
+        <FaMapMarkerAlt />
+        {location ? (
+          <Text>{location}</Text>
+        ) : (
+          <Text>Location not available</Text>
+        )}
+      </IconContainer>
+      <IconContainer>
+        <FaLink />
+        {blog ? <Text>{blog}</Text> : <Text>Blog not available</Text>}
+      </IconContainer>
+      <IconContainer>
+        <FaTwitter />
+        {twitter ? <Text>{twitter}</Text> : <Text>twitter not available</Text>}
+      </IconContainer>
+      <IconContainer>
+        <FaMapMarkerAlt />
+        {email ? <Text>{email}</Text> : <Text>Email not available</Text>}
+      </IconContainer>
+    </SocialInfoContainer>
   );
 };
+
+export default SocialInfo;
