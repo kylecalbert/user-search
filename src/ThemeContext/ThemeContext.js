@@ -1,6 +1,5 @@
 // ThemeContext.js
 import React, { createContext, useContext, useState } from 'react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 const ThemeContext = createContext();

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AppContainer } from './App.styled';
 import { UserSearch } from './Components/UserSearch/UserSearch';
-import { ThemeProvider } from './Components/ThemeContext/ThemeContext';
+import { ThemeProvider } from './ThemeContext/ThemeContext';
 function App() {
   const client = new QueryClient();
 

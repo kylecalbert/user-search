@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { darkModeColors } from '../../constants/colors';
 const StyledText = styled.div`
   color: ${(props) => props.theme.text};
   font-size: ${(props) => props.size || '1rem'};
