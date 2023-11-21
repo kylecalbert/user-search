@@ -1,8 +1,16 @@
-// GithubApi.js
 import React from 'react';
-
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import {
+  BottomContainer,
+  GridItems,
+  IconContainer,
+  MiddleContainer,
+  UserDetailsContainer,
+} from './UserDetails.styled';
+import { Text } from '../Components/Text/Text';
+
+import { FaMapMarkerAlt, FaTwitter } from 'react-icons/fa';
 
 const fetchUserData = async (username) => {
   const response = await axios.get(`https://api.github.com/users/${username}`);
@@ -24,10 +32,42 @@ const UserDetails = ({ username }) => {
   }
 
   return (
-    <div>
-      <h2>{data.name}</h2>
-      <p>{data.bio}</p>
-    </div>
+    <UserDetailsContainer>
+      <UserDetailsContainer>
+        <MiddleContainer>
+          <GridItems>
+            <Text>Repos</Text>
+            <Text>{data.public_repos}</Text>
+          </GridItems>
+          <GridItems>
+            <Text>Followers</Text>
+            <Text>{data.followers}</Text>
+          </GridItems>
+          <GridItems>
+            <Text>Following</Text>
+            <Text>{data.following}</Text>
+          </GridItems>
+        </MiddleContainer>
+        <BottomContainer>
+          <IconContainer>
+            <FaMapMarkerAlt />
+            <Text>{data.location}</Text>
+          </IconContainer>
+          <IconContainer>
+            <FaMapMarkerAlt />
+            <Text>{data.blog}</Text>
+          </IconContainer>
+          <IconContainer>
+            <FaMapMarkerAlt />
+            <Text>{data.location}</Text>
+          </IconContainer>
+          <IconContainer>
+            <FaMapMarkerAlt />
+            <Text>{data.blog}</Text>
+          </IconContainer>
+        </BottomContainer>
+      </UserDetailsContainer>
+    </UserDetailsContainer>
   );
 };
 
