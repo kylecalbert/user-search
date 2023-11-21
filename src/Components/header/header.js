@@ -1,42 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Text } from '../Text/Text';
 import { IoMdSunny } from 'react-icons/io';
+import { FaMoon } from 'react-icons/fa';
 
-export const HeaderContainer = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 3rem;
-`;
+import { useTheme } from '../../ThemeContext/ThemeContext';
 
-export const RightContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-evenly;
-
-  & > *:first-child {
-    margin-right: 0.5rem;
-  }
-`;
-
-export const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: white;
-`;
-
+import { HeaderContainer, IconContainer } from './Header.styled';
+import { RightContainer } from './Header.styled';
+import { sizes } from '../../constants/sizes';
 export const Header = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <HeaderContainer>
-      <Text size="1.5rem">devfinder</Text>
-      <RightContainer>
-        <Text>Light</Text>
+      <Text color={theme.text} size={sizes.medium}>
+        devfinder
+      </Text>
+      <RightContainer onClick={toggleTheme}>
+        <Text color={theme.text}>{theme === 'dark' ? 'Light' : 'Dark'}</Text>
         <IconContainer>
-          <IoMdSunny />
+          {theme === 'dark' ? <IoMdSunny /> : <FaMoon />}
         </IconContainer>
       </RightContainer>
     </HeaderContainer>

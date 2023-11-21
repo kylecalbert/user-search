@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { darkModeColors } from '../../constants/colors';
 const StyledText = styled.div`
-  color: ${(props) => props.color || darkModeColors.textPrimary};
+  color: ${(props) => props.theme.text};
   font-size: ${(props) => props.size || '1rem'};
   font-weight: ${(props) => props.fontWeight || 'bold'};
   margin: ${(props) => props.margin || '0'};
