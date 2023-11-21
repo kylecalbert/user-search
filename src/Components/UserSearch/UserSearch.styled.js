@@ -7,4 +7,10 @@ export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 768px) {
+    width: 28rem;
+  }
+  @media (max-width: 640px) {
+    width: 22rem;
+  }
 `;

@@ -2,16 +2,14 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import {
-  BottomContainer,
   GridItems,
-  IconContainer,
   MiddleContainer,
   UserDetailsContainer,
 } from './UserDetails.styled';
 import { Text } from '../Components/Text/Text';
 
-import { FaMapMarkerAlt, FaTwitter } from 'react-icons/fa';
 import SocialInfo from './SocialInfo';
+import { fontWeight, sizes } from '../constants/sizes';
 
 const fetchUserData = async (username) => {
   const response = await axios.get(`https://api.github.com/users/${username}`);
@@ -38,15 +36,21 @@ const UserDetails = ({ username }) => {
         <MiddleContainer>
           <GridItems>
             <Text>Repos</Text>
-            <Text>{data.public_repos}</Text>
+            <Text size={sizes.medium} fontWeight={fontWeight.bold}>
+              {data.public_repos}
+            </Text>
           </GridItems>
           <GridItems>
             <Text>Followers</Text>
-            <Text>{data.followers}</Text>
+            <Text size={sizes.medium} fontWeight={fontWeight.bold}>
+              {data.followers}
+            </Text>
           </GridItems>
           <GridItems>
             <Text>Following</Text>
-            <Text>{data.following}</Text>
+            <Text size={sizes.medium} fontWeight={fontWeight.bold}>
+              {data.following}
+            </Text>
           </GridItems>
         </MiddleContainer>
         <SocialInfo

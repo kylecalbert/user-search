@@ -1,4 +1,3 @@
-// UserDetailsBottom.js
 import React from 'react';
 import { FaMapMarkerAlt, FaTwitter, FaLink } from 'react-icons/fa';
 

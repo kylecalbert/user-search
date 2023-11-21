@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const SocialInfoContainer = styled.div`
-  background: blue;
+  /* background: blue; */
   width: 80%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  margin-top: 1.7rem;
 `;
 
 export const IconContainer = styled.div`

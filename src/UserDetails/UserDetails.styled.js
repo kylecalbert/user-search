@@ -5,7 +5,7 @@ export const UserDetailsContainer = styled.div`
   justify-content: center;
   align-items: center;
   background: red;
-  width: 90%;
+  width: 100%;
   height: 70%;
   border-radius: 10px;
   background-color: ${(props) => props.theme.backgroundSecondary};
@@ -32,23 +32,5 @@ export const MiddleContainer = styled.div`
 export const GridItems = styled.div`
   & > *:first-child {
     margin-bottom: 10px;
-  }
-`;
-
-export const BottomContainer = styled.div`
-  background: blue;
-  width: 80%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-`;
-
-export const IconContainer = styled.div`
-  display: flex;
-
-  font-size: 1.2rem;
-  color: ${(props) => props.theme.text};
-  & > *:first-child {
-    margin-right: 0.5rem;
   }
 `;
