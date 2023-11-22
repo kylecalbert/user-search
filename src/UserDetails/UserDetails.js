@@ -8,7 +8,7 @@ import {
   UserDetailsContainer,
 } from './UserDetails.styled';
 import { MediumText, SmallText, Text } from '../Components/Text/Text';
-import { BioText } from '../Components/Text/Text';
+
 import SocialInfo from '../Components/SocialInfo/SocialInfo';
 import { fontWeight, sizes } from '../constants/sizes';
 const fetchUserData = async (username) => {

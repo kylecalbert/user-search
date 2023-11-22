@@ -16,7 +16,10 @@ export const RightContainer = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: ${(props) =>
+      props.text === 'Dark'
+        ? 'rgba(0, 128, 128, 0.1)'
+        : 'rgba(255, 69, 0, 0.1)'};
   }
 
   & > *:first-child {
