@@ -4,7 +4,7 @@ import { IoMdSunny } from 'react-icons/io';
 import { FaMoon } from 'react-icons/fa';
 
 import { useTheme } from '../../ThemeContext/ThemeContext';
-
+import { MediumText } from '../Text/Text';
 import { HeaderContainer, IconContainer } from './Header.styled';
 import { RightContainer } from './Header.styled';
 import { sizes } from '../../constants/sizes';
@@ -13,9 +13,7 @@ export const Header = () => {
 
   return (
     <HeaderContainer>
-      <Text color={theme.text} size={sizes.medium}>
-        devfinder
-      </Text>
+      <MediumText text={'devfinder'} />
       <RightContainer onClick={toggleTheme}>
         <Text color={theme.text}>{theme === 'dark' ? 'Light' : 'Dark'}</Text>
         <IconContainer>

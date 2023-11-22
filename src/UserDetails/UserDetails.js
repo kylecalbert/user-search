@@ -7,11 +7,10 @@ import {
   MiddleContainer,
   UserDetailsContainer,
 } from './UserDetails.styled';
-import { Text } from '../Components/Text/Text';
-
-import SocialInfo from './SocialInfo';
+import { MediumText, SmallText, Text } from '../Components/Text/Text';
+import { BioText } from '../Components/Text/Text';
+import SocialInfo from '../Components/SocialInfo/SocialInfo';
 import { fontWeight, sizes } from '../constants/sizes';
-
 const fetchUserData = async (username) => {
   const response = await axios.get(`https://api.github.com/users/${username}`);
   return response.data;
@@ -24,11 +23,11 @@ const UserDetails = ({ username }) => {
   });
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Text>Loading...</Text>;
   }
 
   if (isError) {
-    return <p>Error fetching user data</p>;
+    return <Text>Error fetching user data</Text>;
   }
 
   return (
@@ -36,9 +35,9 @@ const UserDetails = ({ username }) => {
       <UserDetailsContainer>
         <BioContainer>
           {data.bio ? (
-            <Text size={sizes.small}>{data.bio}</Text>
+            <SmallText text={data.bio} />
           ) : (
-            <Text size={sizes.small}>No Bio Found</Text>
+            <SmallText text="No Bio Found" />
           )}
         </BioContainer>
         <MiddleContainer>
@@ -50,9 +49,7 @@ const UserDetails = ({ username }) => {
           </GridItems>
           <GridItems>
             <Text>Followers</Text>
-            <Text size={sizes.medium} fontWeight={fontWeight.bold}>
-              {data.followers}
-            </Text>
+            <MediumText text={data.followers} />
           </GridItems>
           <GridItems>
             <Text>Following</Text>

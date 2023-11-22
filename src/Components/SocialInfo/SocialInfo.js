@@ -2,7 +2,7 @@ import React from 'react';
 import { FaMapMarkerAlt, FaTwitter, FaLink } from 'react-icons/fa';
 
 import { SocialInfoContainer, IconContainer } from './SocialInfo.styled';
-import { Text } from '../Components/Text/Text';
+import { Text } from '../Text/Text';
 
 const SocialInfo = ({ location, blog, twitter, email }) => {
   return (
