@@ -8,9 +8,7 @@ import {
   UserDetailsContainer,
 } from './UserDetails.styled';
 import { MediumText, SmallText, Text } from '../Components/Text/Text';
-
 import SocialInfo from '../Components/SocialInfo/SocialInfo';
-import { fontWeight, sizes } from '../constants/sizes';
 const fetchUserData = async (username) => {
   const response = await axios.get(`https://api.github.com/users/${username}`);
   return response.data;
@@ -43,9 +41,8 @@ const UserDetails = ({ username }) => {
         <MiddleContainer>
           <GridItems>
             <Text>Repos</Text>
-            <Text size={sizes.medium} fontWeight={fontWeight.bold}>
-              {data.public_repos}
-            </Text>
+
+            <MediumText text={data.public_repos} />
           </GridItems>
           <GridItems>
             <Text>Followers</Text>
@@ -53,9 +50,8 @@ const UserDetails = ({ username }) => {
           </GridItems>
           <GridItems>
             <Text>Following</Text>
-            <Text size={sizes.medium} fontWeight={fontWeight.bold}>
-              {data.following}
-            </Text>
+
+            <MediumText text={data.following} />
           </GridItems>
         </MiddleContainer>
         <SocialInfo
