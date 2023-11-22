@@ -19,11 +19,16 @@ export const Header = () => {
       <RightContainer
         text={theme === 'dark' ? 'Light' : 'Dark'}
         onClick={toggleTheme}
+        data-testid={'toggle-btn'}
       >
         <SmallText text={theme === 'dark' ? 'Light' : 'Dark'} />
 
         <IconContainer>
-          {theme === 'dark' ? <IoMdSunny /> : <FaMoon />}
+          {theme === 'dark' ? (
+            <IoMdSunny data-testid="sunny-icon" />
+          ) : (
+            <FaMoon data-testid="moon-icon" />
+          )}
         </IconContainer>
       </RightContainer>
     </HeaderContainer>
