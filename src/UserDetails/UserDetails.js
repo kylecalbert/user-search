@@ -1,13 +1,22 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import moment from 'moment';
+
 import {
   BioContainer,
   GridItems,
   MiddleContainer,
   UserDetailsContainer,
+  UserInfo,
+  userInfo,
 } from './UserDetails.styled';
-import { MediumText, SmallText, Text } from '../Components/Text/Text';
+import {
+  LargeText,
+  MediumText,
+  SmallText,
+  Text,
+} from '../Components/Text/Text';
 import SocialInfo from '../Components/SocialInfo/SocialInfo';
 const fetchUserData = async (username) => {
   const response = await axios.get(`https://api.github.com/users/${username}`);
@@ -28,9 +37,18 @@ const UserDetails = ({ username }) => {
     return <Text>Error fetching user data</Text>;
   }
 
+  const inputDate = moment(data.created_at);
+  const formattedDate = inputDate.format('DD MMMM YYYY').toUpperCase();
+  console.log(formattedDate);
+
   return (
     <UserDetailsContainer>
       <UserDetailsContainer>
+        <UserInfo>
+          <LargeText text={data.login} />
+          <SmallText text={formattedDate} />
+        </UserInfo>
+
         <BioContainer>
           {data.bio ? (
             <SmallText text={data.bio} />

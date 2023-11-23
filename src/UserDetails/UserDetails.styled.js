@@ -2,7 +2,8 @@ import styled from 'styled-components';
 export const UserDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 70%;
@@ -11,12 +12,20 @@ export const UserDetailsContainer = styled.div`
   margin-top: 2rem;
 `;
 
-export const TopContainer = styled.div``;
+export const UserInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+`;
 
 export const MiddleContainer = styled.div`
   display: grid;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 1rem;
   grid-template-columns: repeat(3, 1fr);
 
   width: 80%;
