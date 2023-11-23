@@ -1,25 +1,34 @@
 import React from 'react';
-import { Text } from '../Text/Text';
+import { SmallText } from '../Text/Text';
 import { IoMdSunny } from 'react-icons/io';
 import { FaMoon } from 'react-icons/fa';
 
 import { useTheme } from '../../ThemeContext/ThemeContext';
+import {
+  HeaderContainer,
+  IconContainer,
+  RightContainer,
+} from './Header.styled';
 
-import { HeaderContainer, IconContainer } from './Header.styled';
-import { RightContainer } from './Header.styled';
-import { sizes } from '../../constants/sizes';
 export const Header = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <HeaderContainer>
-      <Text color={theme.text} size={sizes.medium}>
-        devfinder
-      </Text>
-      <RightContainer onClick={toggleTheme}>
-        <Text color={theme.text}>{theme === 'dark' ? 'Light' : 'Dark'}</Text>
+      <SmallText text={'devfinder'} />
+      <RightContainer
+        text={theme === 'dark' ? 'Light' : 'Dark'}
+        onClick={toggleTheme}
+        data-testid={'toggle-btn'}
+      >
+        <SmallText text={theme === 'dark' ? 'Light' : 'Dark'} />
+
         <IconContainer>
-          {theme === 'dark' ? <IoMdSunny /> : <FaMoon />}
+          {theme === 'dark' ? (
+            <IoMdSunny data-testid="sunny-icon" />
+          ) : (
+            <FaMoon data-testid="moon-icon" />
+          )}
         </IconContainer>
       </RightContainer>
     </HeaderContainer>

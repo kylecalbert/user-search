@@ -1,9 +1,14 @@
-// GithubApi.js
 import React from 'react';
-
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-
+import {
+  BioContainer,
+  GridItems,
+  MiddleContainer,
+  UserDetailsContainer,
+} from './UserDetails.styled';
+import { MediumText, SmallText, Text } from '../Components/Text/Text';
+import SocialInfo from '../Components/SocialInfo/SocialInfo';
 const fetchUserData = async (username) => {
   const response = await axios.get(`https://api.github.com/users/${username}`);
   return response.data;
@@ -16,18 +21,47 @@ const UserDetails = ({ username }) => {
   });
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Text>Loading...</Text>;
   }
 
   if (isError) {
-    return <p>Error fetching user data</p>;
+    return <Text>Error fetching user data</Text>;
   }
 
   return (
-    <div>
-      <h2>{data.name}</h2>
-      <p>{data.bio}</p>
-    </div>
+    <UserDetailsContainer>
+      <UserDetailsContainer>
+        <BioContainer>
+          {data.bio ? (
+            <SmallText text={data.bio} />
+          ) : (
+            <SmallText text="No Bio Found" />
+          )}
+        </BioContainer>
+        <MiddleContainer>
+          <GridItems>
+            <Text>Repos</Text>
+
+            <MediumText text={data.public_repos} />
+          </GridItems>
+          <GridItems>
+            <Text>Followers</Text>
+            <MediumText text={data.followers} />
+          </GridItems>
+          <GridItems>
+            <Text>Following</Text>
+
+            <MediumText text={data.following} />
+          </GridItems>
+        </MiddleContainer>
+        <SocialInfo
+          blog={data.blog}
+          location={data.location}
+          twitter={data.twitter_username}
+          email={data.email}
+        />
+      </UserDetailsContainer>
+    </UserDetailsContainer>
   );
 };
 

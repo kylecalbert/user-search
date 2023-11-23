@@ -18,9 +18,10 @@ const SearchBar = ({ onSearch }) => {
     <StyledSearchContainer onSubmit={handleSubmit}>
       <StyledSearchInput
         type="text"
-        placeholder="Search..."
+        placeholder="Search for a github user"
         value={searchTerm}
         onChange={handleChange}
+        data-testid="search-bar"
       />
     </StyledSearchContainer>
   );
