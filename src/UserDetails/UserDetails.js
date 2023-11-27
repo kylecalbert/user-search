@@ -9,14 +9,8 @@ import {
   MiddleContainer,
   UserDetailsContainer,
   UserInfo,
-  userInfo,
 } from './UserDetails.styled';
-import {
-  LargeText,
-  MediumText,
-  SmallText,
-  Text,
-} from '../Components/Text/Text';
+import { Text } from '../Components/Text/Text';
 import SocialInfo from '../Components/SocialInfo/SocialInfo';
 const fetchUserData = async (username) => {
   const response = await axios.get(`https://api.github.com/users/${username}`);
@@ -45,31 +39,26 @@ const UserDetails = ({ username }) => {
     <UserDetailsContainer>
       <UserDetailsContainer>
         <UserInfo>
-          <LargeText text={data.login} />
-          <SmallText text={formattedDate} />
+          <Text>{data.login}</Text>
+          <Text>{formattedDate}</Text>
         </UserInfo>
 
         <BioContainer>
-          {data.bio ? (
-            <SmallText text={data.bio} />
-          ) : (
-            <SmallText text="No Bio Found" />
-          )}
+          {data.bio ? <Text>{data.bio}</Text> : <Text>No Bio Found</Text>}
         </BioContainer>
         <MiddleContainer>
           <GridItems>
             <Text>Repos</Text>
 
-            <MediumText text={data.public_repos} />
+            <Text variant="mediumText">{data.public_repos}</Text>
           </GridItems>
           <GridItems>
             <Text>Followers</Text>
-            <MediumText text={data.followers} />
+            <Text variant="mediumText">{data.followers}</Text>
           </GridItems>
           <GridItems>
             <Text>Following</Text>
-
-            <MediumText text={data.following} />
+            <Text variant="mediumText">{data.following}</Text>
           </GridItems>
         </MiddleContainer>
         <SocialInfo

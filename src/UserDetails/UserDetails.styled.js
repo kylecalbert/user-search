@@ -6,7 +6,7 @@ export const UserDetailsContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 70%;
+  height: 80%;
   border-radius: 10px;
   background-color: ${(props) => props.theme.backgroundSecondary};
   margin-top: 2rem;

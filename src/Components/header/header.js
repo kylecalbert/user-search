@@ -1,8 +1,7 @@
 import React from 'react';
-import { SmallText } from '../Text/Text';
 import { IoMdSunny } from 'react-icons/io';
 import { FaMoon } from 'react-icons/fa';
-
+import { Text } from '../Text/Text';
 import { useTheme } from '../../ThemeContext/ThemeContext';
 import {
   HeaderContainer,
@@ -15,13 +14,14 @@ export const Header = () => {
 
   return (
     <HeaderContainer>
-      <SmallText text={'devfinder'} />
+      <Text variant={'largeText'}>devfinder</Text>
+
       <RightContainer
         text={theme === 'dark' ? 'Light' : 'Dark'}
         onClick={toggleTheme}
         data-testid={'toggle-btn'}
       >
-        <SmallText text={theme === 'dark' ? 'Light' : 'Dark'} />
+        <Text>{theme === 'dark' ? 'Light' : 'Dark'}</Text>
 
         <IconContainer>
           {theme === 'dark' ? (
