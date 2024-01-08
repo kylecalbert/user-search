@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 export const StyledContainer = styled.div`
   width: 45rem;
   height: 35rem;

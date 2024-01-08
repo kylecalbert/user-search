@@ -1,30 +1,30 @@
-import React from 'react';
-import { IoMdSunny } from 'react-icons/io';
-import { FaMoon } from 'react-icons/fa';
-import { Text } from '../Text/Text';
-import { useTheme } from '../../ThemeContext/ThemeContext';
+import React from "react";
+import { IoMdSunny } from "react-icons/io";
+import { FaMoon } from "react-icons/fa";
+import { Text } from "../Text/Text";
+import { useTheme } from "../../ThemeContext/ThemeContext";
 import {
   HeaderContainer,
   IconContainer,
   RightContainer,
-} from './Header.styled';
+} from "./header.styled";
 
 export const Header = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <HeaderContainer>
-      <Text variant={'largeText'}>devfinder</Text>
+      <Text variant={"largeText"}>devfinder</Text>
 
       <RightContainer
-        text={theme === 'dark' ? 'Light' : 'Dark'}
+        text={theme === "dark" ? "Light" : "Dark"}
         onClick={toggleTheme}
-        data-testid={'toggle-btn'}
+        data-testid={"toggle-btn"}
       >
-        <Text>{theme === 'dark' ? 'Light' : 'Dark'}</Text>
+        <Text>{theme === "dark" ? "Light" : "Dark"}</Text>
 
         <IconContainer>
-          {theme === 'dark' ? (
+          {theme === "dark" ? (
             <IoMdSunny data-testid="sunny-icon" />
           ) : (
             <FaMoon data-testid="moon-icon" />

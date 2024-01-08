@@ -1,12 +1,12 @@
 // UserSearch.js
-import React, { useState } from 'react';
-import SearchBar from '../Searchbar/Searchbar';
-import GithubApi from '../../UserDetails/UserDetails';
-import { Header } from '../Header/Header';
+import React, { useState } from "react";
+import SearchBar from "../Searchbar/Searchbar";
+import GithubApi from "../../UserDetails/UserDetails";
+import { Header } from "../header/header";
 
-import { StyledContainer } from './UserSearch.styled';
+import { StyledContainer } from "./UserSearch.styled";
 export const UserSearch = () => {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("");
 
   return (
     <StyledContainer>
